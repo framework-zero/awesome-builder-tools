@@ -1,12 +1,6 @@
 # awesome-builder-tools
 Open source tools for going from side project to company — CRMs, billing, analytics, ad tools, marketplace frameworks, agentic orchestration, community platforms, and legal infra. Everything a builder needs to find customers, ship product, and not get stuck on undifferentiated infrastructure.
 
-# Awesome Builder & Marketplace Tools
-
-Open source projects for builders going from side project to company — covering the market side (demand, advertising, community), the builder side (product, analytics, infrastructure), and the connective tissue in between (CRMs, matching, orchestration, legal).
-
-Curated from [everettVT's GitHub stars](https://github.com/everettVT?tab=stars) and the broader open source ecosystem.
-
 ---
 
 ## Table of Contents
