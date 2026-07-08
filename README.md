@@ -8,6 +8,7 @@ Open source tools for starting and running an **autonomous, AI-staffed company**
 - [Quick Start: The Anchor Stack](#quick-start-the-anchor-stack)
 - [Managing the Company](#managing-the-company)
   - [Agentic Orchestration](#agentic-orchestration)
+  - [Agent Interfaces to the World (Email, Voice, Browser)](#agent-interfaces-to-the-world-email-voice-browser)
   - [AI Company Builders & Digital-Twin Platforms](#ai-company-builders--digital-twin-platforms)
   - [Project & Task Management (Agent-Native)](#project--task-management-agent-native)
   - [Legal, DAO & Governance Infra](#legal-dao--governance-infra)
@@ -55,6 +56,39 @@ The layer that actually runs your AI staff.
 > ⚠️ [AutoGen](https://github.com/microsoft/autogen) (59k★) is **maintenance-only since Oct 2025** — Microsoft merged it into the unified Microsoft Agent Framework. Do not start new projects on it, whatever its star count suggests.
 >
 > **Community temperature check, 2026:** a 66-point Hacker News thread titled *"Sick of AI Agent Frameworks"* and a 51-upvote r/AI_Agents post arguing *"90% of agentic projects would be better off as simple prompt chains"* are both live in 2026. Keep your own orchestration layer as thin as possible rather than assuming more framework is always better.
+
+### Agent Interfaces to the World (Email, Voice, Browser)
+
+An orchestration framework decides *what* to do. This is the layer that lets an agent actually *do* it out in the world — email a customer, call a vendor, or fill out a form on a website nobody built an API for.
+
+**Email**
+
+| Project | Description |
+|---------|-------------|
+| [AgentMail](https://www.agentmail.to/) | The category-defining product — API-first email provider built for AI agents: programmatic inbox creation, full threading, webhooks, MCP server, custom domains with DKIM/SPF/DMARC. SDKs are MIT and see real traction (71K+ weekly npm downloads). **Note:** this is a hosted service, not self-hostable infrastructure — the SDK is open, the mail server behind it isn't. |
+| [Digidai/mails](https://github.com/Digidai/mails) | Self-hosted, MIT, deploys on Cloudflare's free tier. The most built-out self-hosted alternative — has a real surrounding ecosystem: an MCP server, a Python SDK, agent skill files, and even an [open-source AI SDR agent](https://github.com/Digidai/mails-gtm-agent) built on top of it for cold outreach. |
+| [agentteamhq/agentteam-email](https://github.com/agentteamhq/agentteam-email) | Self-hosted (Docker Compose or Helm), MIT. Notably security-conscious: untrusted inbound mail opens in a dedicated review surface rather than being handed straight to the agent, and sending can be gated on human approval — a good default posture for a company where agents draft but don't always auto-send. |
+| [kikubot](https://github.com/mxaiorg/kikubot) | Architecturally different and worth knowing about: **each agent is literally an inbox**, and agents coordinate with each other by emailing one another (a coordinator delegates to specialists via `message_tool`). MIT, used in production at mxHERO. If Framework Zero wants "email as the company's internal nervous system" rather than just an outbound channel, this is the closest existing pattern. |
+| [email-agent-mcp](https://github.com/usejunior/email-agent-mcp) | For the opposite case — an agent operating *your own* existing Gmail/Microsoft 365 mailbox rather than a fresh agent-only inbox. Apache-2.0. Send/delete are allowlist-gated and off by default; useful where you want an agent triaging a real human inbox without giving it free rein. |
+
+**Voice & Telephony**
+
+| Project | Description |
+|---------|-------------|
+| [Patter](https://github.com/PatterAI/Patter) | The strongest open option — an open-source Vapi/Retell alternative. MIT, 931★, very actively maintained. Full stack (LLM, STT, TTS, realtime engine, telephony carrier) with a swappable provider at every layer, plus an automatic LLM fallback chain and vendor-neutral OpenTelemetry tracing. Give an agent a phone number in a few lines. |
+| [OpenVox](https://github.com/amznsri/openvox) | Apache-2.0, ships the *entire* stack including a dashboard and 33 ready-made templates (support, SDR, receptionist, document Q&A, an "executive assistant" combining email + calendar). Reaches phone, WhatsApp, and Telegram from one system. Self-hosts in 60 seconds. The most turnkey/non-technical-friendly option here — worth prioritizing for a grassroots, non-engineer audience over hand-wiring Patter yourself. |
+| [active-call](https://github.com/miuda-ai/active-call) | Rust, infrastructure-level (SIP/WebRTC core rather than a full product). The pick if you want to self-host the telephony layer itself, including fully offline/local ASR+TTS for privacy-sensitive use. |
+
+**Browser & Computer Use**
+
+| Project | Description |
+|---------|-------------|
+| [browser-use](https://github.com/browser-use/browser-use) | The foundational, most-adopted open-source browser-agent library — the default choice for "let an agent operate a real browser." |
+| [browser-harness](https://github.com/browser-use/browser-harness) | From the same team, a leaner sibling: connects an LLM directly to your real Chrome via CDP with almost nothing in between, and the harness itself gets edited/improved by the agent as it runs. MIT, very active. |
+| [Pie](https://github.com/WiseriaAI/pie-ai-agent) | A polished Chrome side-panel extension rather than a library — install from the Chrome Web Store, bring your own API key from any of 11 providers, describe a task in plain language. Apache-2.0, very active. The best fit if your audience is non-technical builders who shouldn't need to run a Python script to get browser automation working. |
+| [sediman-browse](https://github.com/JasonHonKL/sediman-browse) (fork of OpenSkynet) | Differentiated: "watch me do it once, then do it forever." Records a demonstrated workflow, replays it on a cron schedule, self-heals when a site's layout changes, and decides on its own when a completed task is worth saving as a reusable skill. The right tool for recurring company operations (daily competitor-pricing checks, weekly reporting) rather than one-off tasks. |
+
+**Note:** email/voice/browser access is exactly the kind of capability that pairs with the [Agent Payments](#agent-payments--micropayments-x402) layer below — an agent that can email a vendor, call to negotiate, and then pay via x402 is a meaningfully more complete "translate a problem into capability" loop than any one of these alone.
 
 ### AI Company Builders & Digital-Twin Platforms
 
