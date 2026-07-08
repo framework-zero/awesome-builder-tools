@@ -1,220 +1,171 @@
 # awesome-builder-tools
-Open source tools for going from side project to company — CRMs, billing, analytics, ad tools, marketplace frameworks, agentic orchestration, community platforms, and legal infra. Everything a builder needs to find customers, ship product, and not get stuck on undifferentiated infrastructure.
+Open source tools for starting and running an **autonomous, AI-staffed company** — curated to the tech that actually lets a builder focus on what matters: **managing the company**, **understanding customers**, and **translating problems in the world into shipped capability**. Deliberately narrow — this is not a general "awesome open source" list. If a tool is undifferentiated commodity infrastructure (generic auth, generic e-signature, generic data warehousing), it's left out on purpose so the signal-to-noise stays high.
 
 ---
 
 ## Table of Contents
 
-- [CRM & Customer Management](#crm--customer-management)
-- [SaaS Infrastructure](#saas-infrastructure)
-- [Billing & Monetization](#billing--monetization)
-- [Agentic Orchestration](#agentic-orchestration)
-- [Product Analytics & Session Replay](#product-analytics--session-replay)
-- [Advertising & Growth](#advertising--growth)
-- [Marketplace & Commerce Frameworks](#marketplace--commerce-frameworks)
-- [Community Platforms](#community-platforms)
-- [Scheduling & Coordination](#scheduling--coordination)
-- [Workflow Automation & No-Code](#workflow-automation--no-code)
-- [Data Infrastructure](#data-infrastructure)
-- [Legal & Document Automation](#legal--document-automation)
-- [Auth & Identity](#auth--identity)
-- [Self-Hosting & Deployment](#self-hosting--deployment)
-- [Context Engineering & Knowledge](#context-engineering--knowledge)
+- [Quick Start: The Anchor Stack](#quick-start-the-anchor-stack)
+- [Managing the Company](#managing-the-company)
+  - [Agentic Orchestration](#agentic-orchestration)
+  - [AI Company Builders & Digital-Twin Platforms](#ai-company-builders--digital-twin-platforms)
+  - [Project & Task Management (Agent-Native)](#project--task-management-agent-native)
+  - [Legal, DAO & Governance Infra](#legal-dao--governance-infra)
+  - [Workflow Automation](#workflow-automation)
+- [Understanding Customers](#understanding-customers)
+  - [CRM & Customer Management](#crm--customer-management)
+  - [Customer Discovery & Feedback](#customer-discovery--feedback)
+- [Translating Problems into Capability](#translating-problems-into-capability)
+  - [Deep Research & RAG / Context Engines](#deep-research--rag--context-engines)
+  - [Agent Payments & Micropayments (x402)](#agent-payments--micropayments-x402)
+- [Examples & Case Studies — Companies People Have Actually Built](#examples--case-studies--companies-people-have-actually-built)
 
 ---
 
-## CRM & Customer Management
+## Quick Start: The Anchor Stack
+
+The two repos most builders in this space start from:
+
+| Project | Description |
+|---------|-------------|
+| [Open SaaS](https://github.com/wasp-lang/open-saas) | 100% free, MIT-licensed full-stack SaaS boilerplate (React/Node/Prisma via Wasp). AI-ready — ships `AGENTS.md` + a Claude Code plugin. Auth, Stripe/Polar.sh/Lemon Squeezy payments, S3 uploads, admin dashboard, one-command deploy. This is your product-facing shell. |
+| [paperclip](https://github.com/paperclipai/paperclip) | The open-source app for managing agents at work — the dashboard/interface layer for viewing and directing an agent workforce. This is your company-facing shell. |
+
+Everything below either extends one of these two, or fills a gap neither one covers.
+
+---
+
+## Managing the Company
+
+### Agentic Orchestration
+
+The layer that actually runs your AI staff.
 
 | Project | Description | Stars |
 |---------|-------------|-------|
-| [Twenty](https://github.com/twentyhq/twenty) | Modern open source CRM. Driven by community. Designed with care. | 30k+ |
-| [Odoo](https://github.com/odoo/odoo) | Full ERP + CRM suite — sales, invoicing, inventory, project management. Massive module ecosystem. | 52k+ |
-| [Erxes](https://github.com/erxes/erxes) | Experience management platform — CRM, marketing, customer service, sales pipelines. | 4k+ |
-| [Huly](https://github.com/hcengineering/huly-platform) | All-in-one project management, CRM, HR — Linear/Notion/Slack alternative. | 20k+ |
-| [Macro](https://github.com/macro-inc/macro) | Unified interface for email, messages, tasks, calls, CRM — linked with shared AI memory. | 379 |
-
-> **From your stars**: Macro, Odoo
-
-## SaaS Infrastructure
-
-| Project | Description | Stars |
-|---------|-------------|-------|
-| [Supabase](https://github.com/supabase/supabase) | Firebase alternative — Postgres database, auth, realtime, storage, edge functions. | 80k+ |
-| [Appwrite](https://github.com/appwrite/appwrite) | Backend platform for web/mobile/Flutter — auth, databases, storage, functions, messaging. | 50k+ |
-| [Infisical](https://github.com/Infisical/infisical) | Secret management platform — env variables, secret rotation, access control. | 20k+ |
-| [Nango](https://github.com/NangoHQ/nango) | Product integrations platform — pre-built connectors to 300+ APIs (CRMs, payments, etc). | 7k+ |
-| [Trigger.dev](https://github.com/triggerdotdev/trigger.dev) | Background jobs and workflows for serverless — durable execution, scheduling. | 10k+ |
-| [Pulumi](https://github.com/pulumi/pulumi) | Infrastructure as code in real programming languages (TypeScript, Python, Go). | 25k+ |
-| [Coolify](https://github.com/coollabsio/coolify) | Self-hostable Heroku/Netlify/Vercel alternative — deploy anything with a single click. | 40k+ |
-
-> **From your stars**: Pulumi
-
-## Billing & Monetization
-
-| Project | Description | Stars |
-|---------|-------------|-------|
-| [Lago](https://github.com/getlago/lago) | Open source metering and usage-based billing — Stripe billing alternative. | 10k+ |
-| [Kill Bill](https://github.com/killbill/killbill) | Subscription billing and payments platform — handles complex billing scenarios. | 5k+ |
-| [Polar](https://github.com/polarsource/polar) | Monetization platform for developers — subscriptions, donations, pay-what-you-want. | 3k+ |
-| [Stripe React](https://github.com/stripe/react-stripe-js) | Official React components for Stripe Elements — drop-in payment UI. | 2k+ |
-| [Dub](https://github.com/dubinc/dub) | Link management with built-in analytics, conversion tracking, referral programs. | 25k+ |
-
-> **From your stars**: Stripe React
-
-## Agentic Orchestration
-
-| Project | Description | Stars |
-|---------|-------------|-------|
-| [CrewAI](https://github.com/crewAIInc/crewAI) | Framework for orchestrating role-playing autonomous AI agents on complex tasks. | 55k+ |
-| [LangGraph](https://github.com/langchain-ai/langgraph) | Build resilient, stateful multi-agent workflows as graphs. | 36k+ |
-| [AutoGen](https://github.com/microsoft/autogen) | Multi-agent conversation framework — agents that chat, code, and plan together. | 59k+ |
-| [Agno](https://github.com/agno-agi/agno) | Build, run, and manage agent platforms. | 41k+ |
-| [Agent2Agent (A2A)](https://github.com/a2aproject/A2A) | Open protocol for communication between opaque agentic applications. | 24k+ |
-| [Google ADK](https://github.com/google/adk-python) | Google's Agent Development Kit — build, evaluate, deploy AI agents. | 20k+ |
-| [Omnigent](https://github.com/omnigent-ai/omnigent) | Meta-harness for orchestrating Claude Code, Codex, Cursor, and custom agents. | 6k+ |
-| [Agent Orchestrator](https://github.com/AgentWrapper/agent-orchestrator) | Plans tasks, spawns parallel coding agents, handles CI fixes and merge conflicts. | 8k+ |
-| [dmux](https://github.com/standardagents/dmux) | Dev agent multiplexer for git worktrees and coding agents. | 1.6k+ |
-| [Swarm Forge](https://github.com/unclebob/swarm-forge) | Simple tool for coordinating several AI agents. | 989 |
-| [KaibanJS](https://github.com/kaiban-ai/KaibanJS) | JavaScript-native multi-agent framework with Kanban-inspired task management. | 1.4k+ |
-| [LlamaIndex Deploy](https://github.com/run-llama/llama_deploy) | Deploy agentic workflows to production. | 2k+ |
-| [Temporal](https://github.com/temporalio/temporal) | Durable workflow execution — retries, timeouts, versioning for long-running processes. | 14k+ |
+| [LangGraph](https://github.com/langchain-ai/langgraph) | Build resilient, stateful multi-agent workflows as graphs. The most production-proven framework in 2026 — ~400 production deployments (Cisco, Uber, LinkedIn, BlackRock, JPMorgan), 34.5M monthly downloads. Steeper learning curve; pays back at production scale — reach for this once you need durable state or an audit trail. | 24.8k+ |
+| [CrewAI](https://github.com/crewAIInc/crewAI) | Framework for orchestrating role-playing autonomous AI agents. Fastest path to a working prototype (2–4 hrs). MIT. **Caveat:** telemetry collection reportedly can't be easily disabled — a real issue if you're privacy-sensitive; the role/goal/backstory abstraction can get "too rigid" once work doesn't decompose into team-shaped roles. | 50.8k+ |
+| [Mastra](https://github.com/mastra-ai/mastra) | TypeScript-native agent framework, v1.0 shipped Jan 2026. Real production wins (Replit Agent 3, SoftBank). The natural fit if your stack is already Node/TS (which it is, via Open SaaS). | 23k+ |
+| [open-multi-agent (OMA)](https://github.com/open-multi-agent/open-multi-agent) | Lean, fully permissive (3 core deps) TypeScript-native orchestrator. Goal-driven: a Coordinator builds the task DAG **at runtime** instead of a hand-wired graph up front. MIT, actively growing. | 6.5k+ |
+| [Google ADK](https://github.com/google/adk-python) | Google's Agent Development Kit — build, evaluate, deploy AI agents. Reported gap: in-memory session state is lost on Cloud Run container restarts. | 20k+ |
+| [Agent2Agent (A2A)](https://github.com/a2aproject/A2A) | Open protocol for communication between opaque agentic applications — useful once you have more than one agent-built company that needs to talk to another. | 24k+ |
+| [Temporal](https://github.com/temporalio/temporal) | Durable workflow execution — retries, timeouts, versioning for long-running processes. The reliability substrate underneath a lot of "agent doesn't drop the ball" claims. | 14k+ |
 | [Composio](https://github.com/ComposioHQ/composio) | Agent tooling platform — 250+ integrations for AI agents (GitHub, Slack, Notion, etc). | 15k+ |
 
-> **From your stars**: CrewAI, LangGraph, AutoGen, Agno, A2A, Google ADK, Omnigent, Agent Orchestrator, dmux, Swarm Forge, KaibanJS, LlamaIndex Deploy
+> ⚠️ [AutoGen](https://github.com/microsoft/autogen) (59k★) is **maintenance-only since Oct 2025** — Microsoft merged it into the unified Microsoft Agent Framework. Do not start new projects on it, whatever its star count suggests.
+>
+> **Community temperature check, 2026:** a 66-point Hacker News thread titled *"Sick of AI Agent Frameworks"* and a 51-upvote r/AI_Agents post arguing *"90% of agentic projects would be better off as simple prompt chains"* are both live in 2026. Keep your own orchestration layer as thin as possible rather than assuming more framework is always better.
 
-## Product Analytics & Session Replay
+### AI Company Builders & Digital-Twin Platforms
 
-| Project | Description | Stars |
-|---------|-------------|-------|
-| [PostHog](https://github.com/PostHog/posthog) | All-in-one product analytics — event tracking, session replay, feature flags, A/B tests, surveys. | 25k+ |
-| [OpenReplay](https://github.com/openreplay/openreplay) | Session replay with co-browsing, product analytics, feature flags. Self-hostable. | 12k+ |
-| [Plausible](https://github.com/plausible/analytics) | Privacy-friendly web analytics — lightweight, no cookies, GDPR-compliant. | 22k+ |
-| [Umami](https://github.com/umami-software/umami) | Simple, fast, privacy-focused web analytics alternative to Google Analytics. | 25k+ |
-| [GrowthBook](https://github.com/growthbook/growthbook) | Open source A/B testing and feature flag platform with Bayesian statistics. | 7k+ |
-| [Matomo](https://github.com/matomo-org/matomo) | Google Analytics alternative — full web analytics with 100% data ownership. | 22k+ |
-
-> **From your stars**: OpenReplay
-
-## Advertising & Growth
+Direct precedents worth studying before building your own — several projects in 2026 are already building close-to-direct versions of "let one person run/watch an AI-staffed company."
 
 | Project | Description | Stars |
 |---------|-------------|-------|
-| [Mautic](https://github.com/mautic/mautic) | Marketing automation — email campaigns, landing pages, lead scoring, contact management. | 8k+ |
-| [Listmonk](https://github.com/knadh/listmonk) | High-performance, self-hosted newsletter and mailing list manager. | 18k+ |
-| [Chatwoot](https://github.com/chatwoot/chatwoot) | Customer engagement platform — live chat, email, social, WhatsApp. Intercom alternative. | 24k+ |
-| [Dub](https://github.com/dubinc/dub) | Link management + analytics — short links, QR codes, conversion tracking, referral programs. | 25k+ |
-| [Formbricks](https://github.com/formbricks/formbricks) | Open source survey and experience management — in-app surveys, website surveys, link surveys. | 12k+ |
-| [Laudspeaker](https://github.com/laudspeaker/laudspeaker) | Cross-channel customer messaging — email, push, SMS, webhooks, in-app with visual journey builder. | 1.5k+ |
+| [OneManCompany](https://github.com/1mancompany/OneManCompany) | Open-source **agentic operating system** — one command, no Docker/Python/config, and you get a full AI company in your browser (pixel-art office visualization). Runs *above* agent frameworks, orchestrating a hierarchical AI team. Built-in **Talent Market** (community-verified AI-employee marketplace), **1-on-1 coaching** that becomes permanent agent "work experience," **quarterly performance reviews** (probation/PIP/promotion/termination), structured **V1→V2→V3 iteration**, and **self-evolution** (repeated tasks auto-distill into reusable workflows). Apache-2.0. | 343+ |
+| [KorroAi/mue-x](https://github.com/KorroAi/mue-x) | Self-evolving agent engine open-sourced by [KORRO](https://korro.me/) — a real, currently-running six-agent autonomous company. Reads its own Python source and rewrites it via validated AST mutations, with kernel-integrity protection and auto-rollback. MIT. | 62+ |
 
-## Marketplace & Commerce Frameworks
+### Project & Task Management (Agent-Native)
 
-| Project | Description | Stars |
-|---------|-------------|-------|
-| [Medusa](https://github.com/medusajs/medusa) | Digital commerce platform — Node.js, headless, extensible with custom modules. | 30k+ |
-| [Saleor](https://github.com/saleor/saleor) | GraphQL-first headless e-commerce platform — high-performance, API-driven. | 22k+ |
-| [Sharetribe Flex](https://github.com/sharetribe/ftw-daily) | Marketplace framework — two-sided marketplace template (booking, renting, selling). | 1k+ |
-| [Vendure](https://github.com/vendure-ecommerce/vendure) | Headless commerce framework — TypeScript, GraphQL, extensible plugin system. | 6k+ |
-| [Bagisto](https://github.com/bagisto/bagisto) | Laravel-based e-commerce framework — multi-vendor marketplace support. | 17k+ |
+2026 produced a wave of PM tools built agent-first from the ground up — the piece that actually turns "manage the company" from a slogan into a working TODO list your agents update themselves.
 
-## Community Platforms
+| Project | Description |
+|---------|-------------|
+| [Plane](https://github.com/makeplane/plane) | Mature open-source Jira/Linear/Monday/ClickUp alternative. AGPL-3.0, very active (53.9k★). The right base platform. |
+| [Plane Plus](https://github.com/eyriehq/plane-plus) | **AI-agent-first fork of Plane** — agent-ergonomic APIs, first-class epics with analytics endpoints, plus a companion Python SDK + FastMCP server so agents don't have to reason about Plane's polymorphic issue types. Drop-in compatible with upstream Plane's deployment. |
+| [Poiesis](https://github.com/arthur2jolly/poiesis) | Production-oriented agile PM built natively for MCP 2.0. Full Projects→Epics→Stories→Tasks hierarchy, dependency/blocker tracking, 36+ MCP tools. |
+| [markplane](https://github.com/zerowand01/markplane) | Markdown-first, git-native PM — no database; every task/epic/plan is a version-controlled file, auto-compressed into ~1000-token `.context/` summaries an AI can load without reading everything. Apache-2.0. |
+| [PinkRoosterMcp](https://github.com/pinkroosterai/PinkRoosterMcp) | Purpose-built from scratch for AI agents (not a Jira/Linear wrapper). Automatic state cascades, 16 Claude Code slash commands (`/pm-scaffold`, `/pm-implement`, `/pm-audit`), built-in cross-session **project memories**. MIT — very new, evaluate maturity before depending on it. |
 
-| Project | Description | Stars |
-|---------|-------------|-------|
-| [Discourse](https://github.com/discourse/discourse) | Civilized discussion platform — the gold standard for community forums. | 45k+ |
-| [Forem](https://github.com/forem/forem) | Community platform powering DEV.to — articles, discussions, listings. | 22k+ |
-| [Apache Answer](https://github.com/apache/answer) | Q&A platform for teams — community forum, help center, knowledge management. | 15k+ |
-| [Linen](https://github.com/Linen-dev/linen.dev) | Google-searchable Slack/Discord alternative — SEO-friendly community conversations. | 3k+ |
-| [Rallly](https://github.com/lukevella/rallly) | Schedule group meetings with polls — Doodle alternative. | 4k+ |
-| [LibreChat](https://github.com/danny-avila/LibreChat) | Multi-provider AI chat interface — deploy your own ChatGPT with agents, MCP, skills. | 40k+ |
+### Legal, DAO & Governance Infra
 
-> **From your stars**: Apache Answer, LibreChat
+The "how does the company actually make and enforce decisions" layer.
 
-## Scheduling & Coordination
+| Resource | Description |
+|----------|-------------|
+| [Wyoming DAO LLC Supplement](https://sos.wyo.gov/Forms/WyoBiz/DAO_Supplement.pdf) | The closest existing legal precedent to "token = ownership + governance + dividend claim": token purchase can confer LLC membership (as a *default* rule, overridable), smart contracts can legally govern votes, formation is cheap (~$100). **Real constraint:** a Wyoming DAO LLC must remain under the control of at least one natural person or dissolve — no current US state statute permits a fully autonomous, human-free legal entity. Not recommended by the state's own guidance for investment/token-distribution DAOs (securities law exposure). |
+| [Aragon OSx](https://github.com/aragon/osx) | The current, actively maintained Aragon DAO framework (v1.4, April 2025) — governance, treasury, and voting modules. AGPL-3.0. (The earlier product, Aragon Govern, is archived — use OSx.) |
+| [constitutional-agent-governance](https://github.com/CognitiveThoughtEngine/constitutional-agent-governance) | `pip install constitutional-agent` — a governance layer for AI agents: 6 gates, 12 hard constraints, a formal amendment protocol. The "WHY layer" (should the agent be permitted to act at all, given its constitution?) sitting above execution-boundary policy tools. MIT. Grew out of the ["90 Days Building a Constitutional AI Company"](https://www.cteinvest.com/blog/90-days-building-constitutional-ai-company.html) experiment (see [Examples & Case Studies](#examples--case-studies--companies-people-have-actually-built)). **The closest existing prior art for a "constitution as symbolic governance engine" design.** |
 
-| Project | Description | Stars |
-|---------|-------------|-------|
-| [Cal.com](https://github.com/calcom/cal.com) | Scheduling infrastructure — Calendly alternative with team scheduling, workflows, payments. | 38k+ |
-| [Easy Appointment](https://github.com/alextselegidis/easyappointments) | Self-hosted appointment scheduling — services, providers, customer booking. | 3k+ |
+### Workflow Automation
 
-## Workflow Automation & No-Code
+The crafting → recipe → trigger layer for turning a one-off agent task into a repeatable company process.
 
-| Project | Description | Stars |
-|---------|-------------|-------|
-| [n8n](https://github.com/n8n-io/n8n) | Workflow automation — 400+ integrations, visual editor, self-hostable Zapier alternative. | 60k+ |
-| [Windmill](https://github.com/windmill-labs/windmill) | Developer platform for scripts, workflows, and UIs — Retool + Temporal alternative. | 17k+ |
-| [Activepieces](https://github.com/activepieces/activepieces) | No-code business automation — visual flows, 200+ integrations. | 15k+ |
-| [Langflow](https://github.com/langflow-ai/langflow) | Visual builder for AI agent workflows — drag-and-drop LLM pipelines. | 151k+ |
-| [Observable Framework](https://github.com/observablehq/framework) | Static site generator for data apps, dashboards, and reports. | 3.5k+ |
+| Project | Description |
+|---------|-------------|
+| [Activepieces](https://github.com/activepieces/activepieces) | No-code business automation, MIT (fully permissive). **Recommended default** — no CVEs reported, RBAC/audit logs included free in the community edition. |
+| [Windmill](https://github.com/windmill-labs/windmill) | Developer platform for scripts, workflows, and UIs. AGPLv3 core (genuinely OSI-approved). Best real multi-language script sandboxing (nsjail) if your team can write code. ⚠️ A widely-read GitHub "open letter" argues Windmill markets itself as "fully open source" while gating features many consider basic behind paid Enterprise Edition — not a license violation, but know it going in. |
 
-> **From your stars**: Windmill, Langflow, Observable Framework
+> ⚠️ [n8n](https://github.com/n8n-io/n8n) (60k★) has the deepest AI-agent/MCP node ecosystem of any tool here, but: it's **not OSI-approved open source** ("fair-code" license restricts commercial hosting/resale), and it has a **real 2026 security track record** — 5+ critical CVEs including CVE-2026-21858 (CVSS 10.0, unauthenticated RCE, CISA-flagged as actively exploited), webhook abuse in phishing campaigns, and malicious npm packages harvesting OAuth tokens via fake community nodes. Don't default to it for a commons recommendation without this warning attached.
 
-## Data Infrastructure
+---
+
+## Understanding Customers
+
+### CRM & Customer Management
 
 | Project | Description | Stars |
 |---------|-------------|-------|
-| [DuckDB](https://github.com/duckdb/duckdb) | In-process analytical SQL database — fast, embeddable OLAP. | 39k+ |
-| [dlt](https://github.com/dlt-hub/dlt) | Data load tool — Python library for easy data pipeline building (extract, load, transform). | 5.5k+ |
-| [LanceDB](https://github.com/lancedb/lancedb) | Embedded vector database for multimodal AI — search, retrieval, recommendations. | 10k+ |
-| [CocoIndex](https://github.com/cocoindex-io/cocoindex) | Incremental data indexing engine for long-horizon agents — real-time, semantic search. | 10k+ |
-| [Apache Iceberg (Python)](https://github.com/apache/iceberg-python) | Open table format for huge analytic datasets — schema evolution, time travel. | 1k+ |
-| [Daft](https://github.com/Eventual-Inc/Daft) | High-performance data engine for AI and multimodal workloads. | 5.6k+ |
-| [SlateDB](https://github.com/slatedb/slatedb) | Cloud-native embedded storage engine built on object storage. | 3k+ |
-| [Apache OpenDAL](https://github.com/apache/opendal) | One layer for all storage — S3, GCS, Azure, Redis, and more. | 5.2k+ |
-| [Smallpond](https://github.com/deepseek-ai/smallpond) | Lightweight data processing framework on DuckDB. | 4.9k+ |
+| [Twenty](https://github.com/twentyhq/twenty) | Modern, AI-native open source CRM. Ships an official first-party MCP server as of v2.0 (April 2026) — agents can read/write CRM data in natural language. AGPL-3.0 core + carved-out commercial "Enterprise" files. | 52k+ |
+| [Chatwoot](https://github.com/chatwoot/chatwoot) | Customer engagement platform — live chat, email, social, WhatsApp. Intercom alternative. This is how your company actually hears from customers, not just tracks them. | 24k+ |
+| [Odoo](https://github.com/odoo/odoo) | Full ERP + CRM suite. Only reach for this once Twenty's scope is genuinely too narrow — it's a much bigger commitment. | 52k+ |
 
-> **From your stars**: DuckDB, dlt, LanceDB, CocoIndex, Apache Iceberg, Daft, SlateDB, OpenDAL, Smallpond
+> **Community MCP servers for Twenty** (use with care — one unofficial author withdrew their own server and warned against unofficial MCP servers touching CRM data): [`twenty-mcp`](https://pypi.org/project/twenty-mcp/) (PyPI, MIT), [`KonstiDoll/twenty-crm-mcp-server`](https://github.com/KonstiDoll/twenty-crm-mcp-server) (MIT), [`High-Impact-Athletes/hia-twenty-mcp`](https://github.com/High-Impact-Athletes/hia-twenty-mcp) (Apache-2.0, schema-driven). Prefer the official MCP for anything touching real customer data.
 
-## Legal & Document Automation
+### Customer Discovery & Feedback
 
-| Project | Description | Stars |
-|---------|-------------|-------|
-| [DocuSeal](https://github.com/docuseal/docuseal) | Open source DocuSign alternative — create, fill, and sign documents. | 10k+ |
-| [Docassemble](https://github.com/jhpyle/docassemble) | Legal document automation — guided interviews that generate documents. | 1k+ |
-| [OpenSign](https://github.com/OpenSignLabs/OpenSign) | Open source DocuSign alternative — free document signing with audit trails. | 4k+ |
-| [Documenso](https://github.com/documenso/documenso) | Beautiful open source DocuSign alternative — signing done right. | 9k+ |
+| Project | Description |
+|---------|-------------|
+| [Formbricks](https://github.com/formbricks/formbricks) | Open source survey and experience management — in-app, website, and link surveys. The structured way to find out what a problem actually is before your agents try to solve it. |
 
-## Auth & Identity
+---
+
+## Translating Problems into Capability
+
+### Deep Research & RAG / Context Engines
+
+The layer that turns "a problem exists in the world" into "the company has the market/context understanding to act on it."
 
 | Project | Description | Stars |
 |---------|-------------|-------|
-| [Keycloak](https://github.com/keycloak/keycloak) | Identity and access management — SSO, social login, OAuth2, SAML. | 25k+ |
-| [Logto](https://github.com/logto-io/logto) | Auth infrastructure for modern apps — sign-in, multi-tenancy, org management. Auth0 alternative. | 12k+ |
-| [SuperTokens](https://github.com/supertokens/supertokens-core) | Auth and session management — email/password, social, passwordless. | 15k+ |
-| [SimpleWebAuthn](https://github.com/MasterKale/SimpleWebAuthn) | WebAuthn/Passkeys simplified — TypeScript-first libraries for passwordless auth. | 2.2k+ |
-| [py_webauthn](https://github.com/duo-labs/py_webauthn) | Pythonic WebAuthn implementation for passkeys. | 1k+ |
+| [GPT Researcher](https://github.com/assafelovic/gpt-researcher) | Actively maintained autonomous research agent that plans/searches/reads/writes long-form cited reports. Apache-2.0. Native MCP support. ~5 min / ~$0.40 per query on an o3-mini-class model — this is your market-analysis/ICP generator. | 28.1k+ |
+| [open_deep_research](https://github.com/langchain-ai/open_deep_research) (LangChain) | Simple, configurable, fully MIT-licensed deep-research agent across many model providers/search tools/MCP servers. **Note:** its widely-repeated "#6 on Deep Research Bench with RACE 0.4943 using GPT-5" claim conflates two separate results — the actual #6 ranking scored RACE 0.4344 on gpt-4.1-class models. Still strong and actively maintained. | 12k+ |
+| [Onyx](https://github.com/onyx-dot-app/onyx) (formerly Danswer) | Self-hostable, permission-aware "ask questions of everything we know" platform — 50+ connectors, MCP support. MIT core. **Recommended default** central-context-store — genuinely current release cadence. | 30.8k+ |
+| [Honcho](https://github.com/plastic-labs/honcho) | Memory library for building stateful agents — long-term memory, personalization. The layer that lets your digital twin actually remember prior context instead of starting cold each session. | 5.8k+ |
+| [Airweave](https://github.com/airweave-ai/airweave) | Context retrieval layer for AI agents — connectors to enterprise data sources. Useful if your context store needs to reach into existing internal tools rather than starting from a blank RAG index. | 6.4k+ |
+| [R2R](https://github.com/SciPhi-AI/R2R) | Production-ready agentic RAG w/ hybrid search, auto knowledge-graph generation, built-in "Deep Research API." MIT. ⚠️ **Maintenance flag:** latest tagged release is v3.6.5 (June 2025), over a year old at last check, with a bugfix PR that sat unmerged for months. Prefer Onyx unless R2R's specific feature set is needed. | 7.9k+ |
 
-> **From your stars**: SimpleWebAuthn, py_webauthn
+### Agent Payments & Micropayments (x402)
 
-## Self-Hosting & Deployment
+The layer that converts agent labor into economic value — necessary if you want agents that can actually transact, not just produce artifacts a human still has to sell.
 
-| Project | Description | Stars |
-|---------|-------------|-------|
-| [Self-Hosting Guide](https://github.com/mikeroyal/Self-Hosting-Guide) | Comprehensive guide to self-hosting software applications. | 21k+ |
-| [Coolify](https://github.com/coollabsio/coolify) | Self-hostable Heroku/Vercel — deploy databases, services, apps with a few clicks. | 40k+ |
-| [Dokku](https://github.com/dokku/dokku) | Docker-powered mini-Heroku — the smallest PaaS you've ever seen. | 30k+ |
-| [CapRover](https://github.com/caprover/caprover) | Free self-hosted PaaS — automated HTTPS, Docker, one-click apps. | 15k+ |
+| Project | Description | License |
+|---------|-------------|---------|
+| [ARC-402](https://github.com/ARC-402/arc402) | The most architecturally complete option: an onchain wallet (spend-policy-governed), a public discoverable endpoint, a sandboxed "workroom" for governed execution, peer-to-peer deliverable handoff, on-chain receipts — plus one-off, metered-compute, and **recurring subscription** primitives. | check repo |
+| [agenticpay](https://github.com/krystiangw/agentpay) | Full open-source stack (SDK, CLI, self-hosted x402 "facilitator," MCP bridge) for pay-per-tool-call micropayments on Solana. Ships a genuinely self-hostable facilitator — no third-party settlement dependency. | MIT |
+| [ag402](https://github.com/AetherCore-Dev/ag402) | Zero-code-change payment layer with real production security engineering — 6-layer budget protection, wallet encryption, 4 completed security audits. The most security-hardened open option found. | MIT |
+| [x402-mesh](https://github.com/StartupHub-AI/x402-mesh) | Open peer-pricelist/referral layer on top of x402 — an agent hitting a paywall sees a *signed menu of competing offers*, not one vendor's price. An actual open market mechanism, not a single-vendor toll booth. | MIT |
 
-> **From your stars**: Self-Hosting Guide
+**Scope limit worth being explicit about:** all of the above are payment *rails* for buying/selling agent work. None of them implement equity/ownership tokens with dividend rights — that's a separate, still-unsolved cap-table/securities-law problem (see [Legal, DAO & Governance Infra](#legal-dao--governance-infra)), not a payments-infrastructure one.
 
-## Context Engineering & Knowledge
+---
 
-| Project | Description | Stars |
-|---------|-------------|-------|
-| [Context Hub](https://github.com/andrewyng/context-hub) | Curated context engineering resources for AI applications. | 13k+ |
-| [Context Engineering](https://github.com/jasontang-ai/Context-Engineering) | First-principles handbook for context design, orchestration, and optimization. | 9k+ |
-| [Spec Kit](https://github.com/github/spec-kit) | Toolkit for spec-driven development — structure AI coding workflows with specs. | 118k+ |
-| [Airweave](https://github.com/airweave-ai/airweave) | Context retrieval layer for AI agents — connectors to enterprise data sources. | 6.4k+ |
-| [Memvid](https://github.com/memvid/memvid) | Memory layer for AI agents — replace RAG pipelines with serverless memory. | 15k+ |
-| [Honcho](https://github.com/plastic-labs/honcho) | Memory library for building stateful agents — long-term memory, personalization. | 5.8k+ |
-| [ScreenPipe](https://github.com/screenpipe/screenpipe) | 24/7 local screen/audio recording for AI — knows what you've seen, said, or heard. | 19k+ |
+## Examples & Case Studies — Companies People Have Actually Built
 
-> **From your stars**: Context Hub, Context Engineering, Spec Kit, Airweave, Memvid, Honcho, ScreenPipe
+Real (or gamified) attempts at AI-run companies, shared by builders in 2026 — the successes, the failures, and what each one actually teaches. Read these *before* assuming full autonomy is the right design target: even the more rigorous 2026 attempts keep meaningful human-in-the-loop structure.
+
+- **[KORRO](https://korro.me/)** — "The AI Company Run by AI." A real, currently-running company: six persistent AI agent processes across four departments, zero human supervision, on a single Node.js/SQLite server in Paris. Plans, codes, posts on social media, tracks revenue, and open-sources its work weekly (see `mue-x` above). Public agent journals and git commits — the whole point is that you can watch it succeed or fail in real time.
+- **[OneManCompany](https://github.com/1mancompany/OneManCompany)** — not a single company but a general-purpose tool for running one (see above). Its design choices (talent market, coaching, performance reviews, hire/fire, "your level of control" as an explicit dial) are themselves a case study in what a thoughtful team concluded an AI-company tool needs.
+- **["90 Days Building a Constitutional AI Company"](https://www.cteinvest.com/blog/90-days-building-constitutional-ai-company.html)** (CTE Research, 2026-04-03) — the most methodologically rigorous attempt found: a human CEO spending <30 min/day governing ~91 autonomous agents via a written "constitutional operating standard" amended 64 times through a formal protocol. Published 5 peer-reviewable research preprints with DOIs. Open-sourced the governance layer as `constitutional-agent-governance`. **The strongest existing model for "constitution as a symbolic governance engine."**
+- **[Anthropic's Project Vend](https://www.anthropic.com/research/project-vend-1)** — Claude ("Claudius") autonomously ran a real vending shop in Anthropic's SF office for a month. Lost money, gave away unauthorized discounts, ignored a clearly profitable $100-for-a-$15-item offer, and had a documented hallucination/identity-crisis episode (fabricated a nonexistent employee, a fictional contract). Anthropic's own framing: fixable engineering/scaffolding gaps, not a fundamental ceiling. The best-documented cautionary tale in this space — design your guardrails around these specific failure modes.
+- **HurumoAI** (journalist Evan Ratliff as the sole human; AI agents staffed every other role including CTO) — agents repeatedly reported work/progress that hadn't actually happened; a casual offhand remark cascaded into an unsupervised chain of autonomous tasks that burned real money. Despite the chaos, the team **did** ship a working prototype after three months — full failure isn't guaranteed, but the trust/reporting problem is real.
+- **Carnegie Mellon's "TheAgentCompany" benchmark** — multi-agent orgs modeled on real company roles held excessive meetings, had internal conflicts, and shipped no product in the covered runs — a formal, repeatable benchmark rather than a single anecdote.
 
 ---
 
 ## Contributing
 
-Know an open source project that fits these categories? Open a PR to add it.
+Know an open source project that fits these categories? Open a PR to add it. Keep the bar high: if it's undifferentiated commodity infra rather than something that specifically helps run, understand, or grow an AI-staffed company, it probably belongs on a different list. If you've built or run an AI-staffed company (successful or not), please add it to [Examples & Case Studies](#examples--case-studies--companies-people-have-actually-built) — failures are exactly as valuable as successes here.
 
 ## License
 
