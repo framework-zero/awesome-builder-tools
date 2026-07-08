@@ -1,6 +1,14 @@
 # awesome-builder-tools
 Open source tools for starting and running an **autonomous, AI-staffed company** — curated to the tech that actually lets a builder focus on what matters: **managing the company**, **understanding customers**, and **translating problems in the world into shipped capability**. Deliberately narrow — this is not a general "awesome open source" list. If a tool is undifferentiated commodity infrastructure (generic auth, generic e-signature, generic data warehousing), it's left out on purpose so the signal-to-noise stays high.
 
+<p align="center">
+  <a href="https://github.com/framework-zero/awesome-builder-tools">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https%3A%2F%2Fgithub.com%2Fframework-zero%2Fawesome-builder-tools" alt="QR code linking to this repository" width="180" height="180">
+  </a>
+  <br>
+  <sub>Scan to come back to this repo</sub>
+</p>
+
 ---
 
 ## Table of Contents
