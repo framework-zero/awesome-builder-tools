@@ -3,7 +3,7 @@ Open source tools for starting and running an **autonomous, AI-staffed company**
 
 <p align="center">
   <a href="https://github.com/framework-zero/awesome-builder-tools">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https%3A%2F%2Fgithub.com%2Fframework-zero%2Fawesome-builder-tools" alt="QR code linking to this repository" width="180" height="180">
+    <img src="assets/repo-qr-code.png" alt="QR code linking to this repository" width="180" height="180">
   </a>
   <br>
   <sub>Scan to come back to this repo</sub>
