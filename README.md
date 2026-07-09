@@ -28,6 +28,7 @@ Open source tools for starting and running an **autonomous, AI-staffed company**
   - [Sales Outreach & AI SDR](#sales-outreach--ai-sdr)
   - [Email & Marketing Automation](#email--marketing-automation)
   - [Social Media Automation](#social-media-automation)
+  - [Paid Ads & Creative Generation](#paid-ads--creative-generation)
 - [Translating Problems into Capability](#translating-problems-into-capability)
   - [Deep Research & RAG / Context Engines](#deep-research--rag--context-engines)
   - [Agent Payments & Micropayments (x402)](#agent-payments--micropayments-x402)
@@ -193,6 +194,18 @@ The list covers understanding customers and building the product, but nothing on
 |---------|-------------|-------|
 | [Postiz](https://github.com/gitroomhq/postiz-app) | Self-hosted, agentic social media scheduler across 30+ platforms with AI-assisted content generation. The most active project in this section by far — multiple releases a month. AGPL-3.0. | 32.9k+ |
 | [Mixpost](https://github.com/inovector/mixpost) | Simpler self-hosted scheduler covering 10+ networks, one-time-payment model rather than a subscription. More permissive license than Postiz if that matters for your use case. MIT. | 3.4k+ |
+
+### Paid Ads & Creative Generation
+
+The layer that generates ad creative/copy and actually gets it onto Meta (or another ad platform) — as distinct from the general social scheduling above.
+
+| Project | Description | Stars |
+|---------|-------------|-------|
+| [Pipeboard Meta Ads MCP](https://github.com/pipeboard-co/meta-ads-mcp) | The MCP that actually talks to Meta's Marketing API — launch campaigns, upload creatives, adjust budgets, pull performance, all from natural language in any MCP client (Claude, Goose, Cursor, ChatGPT). Badged Meta Business Partner; hosted remote MCP with a free tier, or self-host the PyPI package. **License note:** Business Source License, source-available rather than strictly open source (converts to Apache 2.0 in 2029); GitHub reports `NOASSERTION`. | 1.06k+ |
+| [gooseworks-ai/goose-skills](https://github.com/gooseworks-ai/goose-skills) | A Growth/GTM skill library (for Goose, Claude Code, Codex, Cursor) that's the actual creative-generation half of this pairing — image/video generation (`create-image-fal`, `create-video-fal`), templated ad renders (`render-offer-ad`, `render-value-prop`, UGC formats), a `meta-ads-campaign-builder` that turns an ICP + objective into targeting/ad-set/copy structure, plus analysis and Ad Library competitor-scraping skills. Produces the campaign brief and assets; pair with an MCP like the one above to actually post. No license file at last check — verify terms before depending on it. | 994+ |
+| [meta-ads-kit](https://github.com/TheMattBerman/meta-ads-kit) | Fully open-source (MIT) closed-loop agent, built on OpenClaw: monitor spend → detect ad fatigue → shift budget → generate new copy → upload PAUSED ads for human review → repeat. The most "batteries included" option that's unambiguously permissively licensed. | 272+ |
+| [meta-ads-automation-ai](https://github.com/sandhere01/meta-ads-automation-ai) | MIT. Generates ad images via DALL-E 3 and publishes directly to Meta's Marketing API. Small, early-stage — evaluate maturity before depending on it. | 17+ |
+| [meta-ads-cli](https://github.com/attainmentlabs/meta-ads-cli) | MIT. Bare CLI wrapper around the Meta Marketing API for campaign management — no creative generation, useful as a minimal scripting base. | 30+ |
 
 ---
 
