@@ -24,6 +24,10 @@ Open source tools for starting and running an **autonomous, AI-staffed company**
 - [Understanding Customers](#understanding-customers)
   - [CRM & Customer Management](#crm--customer-management)
   - [Customer Discovery & Feedback](#customer-discovery--feedback)
+- [Reaching Customers (Go-to-Market)](#reaching-customers-go-to-market)
+  - [Sales Outreach & AI SDR](#sales-outreach--ai-sdr)
+  - [Email & Marketing Automation](#email--marketing-automation)
+  - [Social Media Automation](#social-media-automation)
 - [Translating Problems into Capability](#translating-problems-into-capability)
   - [Deep Research & RAG / Context Engines](#deep-research--rag--context-engines)
   - [Agent Payments & Micropayments (x402)](#agent-payments--micropayments-x402)
@@ -161,6 +165,34 @@ The crafting → recipe → trigger layer for turning a one-off agent task into 
 | Project | Description |
 |---------|-------------|
 | [Formbricks](https://github.com/formbricks/formbricks) | Open source survey and experience management — in-app, website, and link surveys. The structured way to find out what a problem actually is before your agents try to solve it. |
+
+---
+
+## Reaching Customers (Go-to-Market)
+
+The list covers understanding customers and building the product, but nothing on actually reaching people — sales outreach, marketing, and distribution. This section fills that gap.
+
+### Sales Outreach & AI SDR
+
+| Project | Description | Stars |
+|---------|-------------|-------|
+| [OpenOutreach](https://github.com/eracle/OpenOutreach) | Self-hosted, email-first AI sales agent for B2B lead gen: describe your product and target market, it discovers, qualifies, and emails leads from a mailbox you own. Runs locally. ⚠️ GitHub reports its license as `NOASSERTION` (no cleanly detected SPDX license) — verify actual terms before relying on it. | 2.3k+ |
+| [Bricks](https://github.com/BraaMohammed/bricks) | Fully local, open-source alternative to Clay.com — AI agents plus Puppeteer-based web scraping turn a raw CSV of companies/contacts into enriched business intelligence without a subscription or sending data to a third party. Early-stage; small community, evaluate maturity before depending on it. | 40+ |
+| [open-sdr](https://github.com/MatthewDailey/open-sdr) | Agent for outbound research and lead generation, ships an MCP server so other MCP clients (e.g. Claude Desktop) can call it as a tool. Very early-stage — no license file at last check. | ~20 |
+
+### Email & Marketing Automation
+
+| Project | Description | Stars |
+|---------|-------------|-------|
+| [Mautic](https://github.com/mautic/mautic) | The deepest open-source marketing automation suite here — campaigns, lead scoring, visual drip workflows, landing pages. Community-governed since Acquia handed it back to the Mautic Association in 2024; heavier PHP/MySQL/Apache stack to run than the alternatives below. ⚠️ GitHub reports its license as `NOASSERTION` — verify terms before relying on it. | 10k+ |
+| [Listmonk](https://github.com/knadh/listmonk) | High-performance, self-hosted newsletter/mailing-list manager, single Go binary + Postgres. No CRM or visual workflow builder like Mautic — the pick if you mainly need to send campaigns and track opens/clicks with minimal infrastructure. AGPL-3.0. | 22k+ |
+
+### Social Media Automation
+
+| Project | Description | Stars |
+|---------|-------------|-------|
+| [Postiz](https://github.com/gitroomhq/postiz-app) | Self-hosted, agentic social media scheduler across 30+ platforms with AI-assisted content generation. The most active project in this section by far — multiple releases a month. AGPL-3.0. | 32.9k+ |
+| [Mixpost](https://github.com/inovector/mixpost) | Simpler self-hosted scheduler covering 10+ networks, one-time-payment model rather than a subscription. More permissive license than Postiz if that matters for your use case. MIT. | 3.4k+ |
 
 ---
 
