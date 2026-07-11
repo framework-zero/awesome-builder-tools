@@ -257,6 +257,13 @@ Real (or gamified) attempts at AI-run companies, shared by builders in 2026 — 
 
 Know an open source project that fits these categories? Open a PR to add it. Keep the bar high: if it's undifferentiated commodity infra rather than something that specifically helps run, understand, or grow an AI-staffed company, it probably belongs on a different list. If you've built or run an AI-staffed company (successful or not), please add it to [Examples & Case Studies](#examples--case-studies--companies-people-have-actually-built) — failures are exactly as valuable as successes here.
 
+> **Open for discussion — scope & curation (2026-07):** the list has grown to 7 top-level sections, 13+ subsections, and 55+ entries, with three subsections (Sales Outreach & AI SDR, Email & Marketing Automation, Social Media Automation, Paid Ads & Creative Generation) added in a single sitting via #2 and #3. That's exactly the "undifferentiated sprawl" the intro paragraph says this list exists to avoid, and worth a deliberate pass before it goes further:
+> - **Is Go-to-Market in scope at all?** The original three pillars are managing, understanding, and translating problems into capability — reaching customers (sales/marketing/ads) is a plausible fourth pillar, but it wasn't in the original framing and arguably deserves its own focused list rather than growing as a subtree here.
+> - **Where's the line for "differentiated enough"?** Several recent additions (e.g. bare Marketing-API CLI wrappers, sub-50-star single-maintainer repos) are closer to "a script that calls an existing API" than "a tool built specifically for AI-staffed companies." Worth agreeing on a concrete bar (e.g. a star/activity floor, or "must be agent-native by design, not just agent-usable") rather than judging each PR ad hoc.
+> - **Merge velocity vs. review depth:** #2 was merged within ~20 minutes of being opened, before its second commit landed — worth a beat before merging to make sure a PR is actually complete, especially as volume increases.
+>
+> Not proposing specific cuts here — flagging the trend so maintainers can decide whether to split GTM into a sister list, tighten the inclusion bar, or do a dedicated trim pass.
+
 ## License
 
 This list is part of the [BSOTA Collective](https://github.com/bsota/collective) knowledge base.
