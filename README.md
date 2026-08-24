@@ -109,6 +109,7 @@ Direct precedents worth studying before building your own — several projects i
 
 | Project | Description | Stars |
 |---------|-------------|-------|
+| [Orkas](https://github.com/Orkas-AI/Orkas) | MIT-licensed, local-first desktop AI workforce where a Commander turns goals into plans and coordinates specialist agents through one chat. | 1.4k+ |
 | [OneManCompany](https://github.com/1mancompany/OneManCompany) | Open-source **agentic operating system** — one command, no Docker/Python/config, and you get a full AI company in your browser (pixel-art office visualization). Runs *above* agent frameworks, orchestrating a hierarchical AI team. Built-in **Talent Market** (community-verified AI-employee marketplace), **1-on-1 coaching** that becomes permanent agent "work experience," **quarterly performance reviews** (probation/PIP/promotion/termination), structured **V1→V2→V3 iteration**, and **self-evolution** (repeated tasks auto-distill into reusable workflows). Apache-2.0. | 343+ |
 | [KorroAi/mue-x](https://github.com/KorroAi/mue-x) | Self-evolving agent engine open-sourced by [KORRO](https://korro.me/) — a real, currently-running six-agent autonomous company. Reads its own Python source and rewrites it via validated AST mutations, with kernel-integrity protection and auto-rollback. MIT. | 62+ |
 
