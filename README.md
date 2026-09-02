@@ -194,6 +194,7 @@ The list covers understanding customers and building the product, but nothing on
 |---------|-------------|-------|
 | [Postiz](https://github.com/gitroomhq/postiz-app) | Self-hosted, agentic social media scheduler across 30+ platforms with AI-assisted content generation. The most active project in this section by far — multiple releases a month. AGPL-3.0. | 32.9k+ |
 | [Mixpost](https://github.com/inovector/mixpost) | Simpler self-hosted scheduler covering 10+ networks, one-time-payment model rather than a subscription. More permissive license than Postiz if that matters for your use case. MIT. | 3.4k+ |
+| [BulkPublish social media content skills](https://github.com/azeemkafridi/bulkpublish-api/tree/main/skills/social-media-content-skills) | API-backed, reusable AI-agent skills for planning, adapting, reviewing, scheduling, and publishing social content across channels. The [BulkPublish API](https://github.com/azeemkafridi/bulkpublish-api) provides the execution layer and [MCP documentation](https://app.bulkpublish.com/docs) covers agent integration. MIT. | 1 |
 
 ### Paid Ads & Creative Generation
 
