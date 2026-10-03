@@ -123,6 +123,7 @@ Direct precedents worth studying before building your own — several projects i
 | [Poiesis](https://github.com/arthur2jolly/poiesis) | Production-oriented agile PM built natively for MCP 2.0. Full Projects→Epics→Stories→Tasks hierarchy, dependency/blocker tracking, 36+ MCP tools. |
 | [markplane](https://github.com/zerowand01/markplane) | Markdown-first, git-native PM — no database; every task/epic/plan is a version-controlled file, auto-compressed into ~1000-token `.context/` summaries an AI can load without reading everything. Apache-2.0. |
 | [PinkRoosterMcp](https://github.com/pinkroosterai/PinkRoosterMcp) | Purpose-built from scratch for AI agents (not a Jira/Linear wrapper). Automatic state cascades, 16 Claude Code slash commands (`/pm-scaffold`, `/pm-implement`, `/pm-audit`), built-in cross-session **project memories**. MIT — very new, evaluate maturity before depending on it. |
+| [Tale](https://github.com/tale-project/tale) | MIT-licensed project workspace where teams assign tasks to configured AI agents, keep work in persistent sandboxes, and review deliverables; manager agents can delegate tasks to other project agents. |
 
 ### Legal, DAO & Governance Infra
 
